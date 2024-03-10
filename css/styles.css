@@ -1,0 +1,451 @@
+/*CSS Reset*/
+body,
+header,
+nav,
+main,
+footer,
+h1,
+h2,
+h3,
+div,
+img,
+ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    padding: 2% 1% 2%;
+    font-family: "Assistant", sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+    font-optical-sizing: auto;
+    text-align: center;
+}
+
+h2 {
+    padding: 2% 1% 2%;
+    font-family: "Assistant", sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+    font-optical-sizing: auto;
+}
+
+/*Sticky footer*/
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body .wrapper {
+    flex: 1 0 auto;
+}
+
+/*Navigation*/
+header img {
+    margin-left: 30px;
+    width: 60px;
+}
+
+header {
+    background-image: url(../images/mitchell-luo-U1Hhinvb-v4-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: 20% 0 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px 0 black;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header li {
+    margin: 20px;
+}
+
+header li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+picture {
+    margin: 0 auto;
+}
+
+/*UX Projects Card Styles*/
+.ux-projects {
+    margin-bottom: 3%;
+}
+
+.card {
+    position: relative;
+    /*change size*/
+    width: 350px;
+    /*change size*/
+    height: 350px;
+    background-color: #ececec;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 3%;
+}
+
+.card picture {
+    /*change size*/
+    width: 3500px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover,
+.card:focus {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+
+.card__description {
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+.uxtitle {
+    font-size: 16px;
+    color: #333;
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+}
+
+.card:hover picture,
+.card:focus picture {
+    scale: 0;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    color: #777;
+    font-family: "Assistant", sans-serif;
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+
+/*Web section styles*/
+.web {
+    background-image: url(../images/milad-fakurian-7wUorDiCMSU-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 1% 0 3%;
+}
+
+/*Web Projects Card Styles*/
+.book {
+    margin: 0 1% 1%;
+    position: relative;
+    border-radius: 10px;
+    /*change size*/
+    width: 400px;
+    height: 400px;
+    background-color: whitesmoke;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.cover {
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.book:hover .cover,
+.book:focus .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+}
+
+.web-title {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Philosopher", sans-serif;
+}
+
+p {
+    padding: 5% 15% 5% 15%;
+    font-size: 18px;
+    font-family: "Assistant", sans-serif;
+}
+
+/*Illustrations Card Styles*/
+.card-illustrations {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+    /*change margin*/
+    margin-bottom: 440px;
+
+}
+
+.illustrations:hover>.card-illustrations,
+.illustrations:focus>.card-illustrations {
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+/*Logo Design section styles*/
+.logo-design {
+    background-image: url(../images/milad-fakurian-7wUorDiCMSU-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    padding-bottom: 3%;
+}
+
+.logos img {
+    margin: 1% auto;
+}
+
+.logos {
+    display: grid;
+    grid-auto-rows: (4, 1fr);
+    row-gap: 20px;
+}
+
+/*Footer*/
+footer {
+    background: #9c9e9b;
+    color: #fff;
+}
+
+.sm-list {
+    text-align: center;
+    list-style-type: none;
+    color: #ffffff;
+}
+
+.sm-list li {
+    display: inline-block;
+}
+
+.sm-list h3 {
+    margin: 20px;
+    font-family: "Philosopher", sans-serif;
+    font-size: 24px;
+}
+
+.sm-list a {
+    color: #ffffff;
+    margin: 20px;
+    font-family: "Assistant", sans-serif;
+}
+
+.sm-list img {
+    width: 32px;
+    margin: 20px 10px;
+}
+
+.sm-list img:hover {
+    opacity: 0.5;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 769px) {
+
+    /*Navigation*/
+    header li {
+        margin: 30px;
+    }
+
+    header li a {
+        font-size: 1.8em;
+    }
+
+    /*UX Projects Card Styles*/
+    .card {
+        width: 600px;
+        height: 600px;
+    }
+
+    .card picture {
+        width: 600px;
+    }
+
+    .uxtitle {
+        font-size: 24px;
+    }
+
+    .card__description {
+        font-size: 18px;
+        line-height: 1.4;
+
+    }
+
+    /*Web Projects Card Styles*/
+    .book {
+        width: 600px;
+        height: 600px;
+    }
+
+    .web-title {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    /*Illustrations Card Styles*/
+    .illustrations {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    /*UX Projects Card Styles*/
+    .ux-projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    /*Illustrations Card Styles*/
+    .illustrations {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    /*Logos*/
+    .logos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        row-gap: 20px;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+
+    /*Illustrations Card Styles*/
+    .illustrations {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    /*Logos*/
+    .logos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+        row-gap: 20px;
+    }
+}
+
+
+@media screen and (min-width: 1870px) {
+    .ux-projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*Illustrations Card Styles*/
+    .illustrations {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*Logos*/
+    .logos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
