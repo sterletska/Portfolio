@@ -24,7 +24,6 @@ h1 {
     font-family: "Assistant", sans-serif;
     font-weight: 600;
     font-size: 2em;
-    font-optical-sizing: auto;
     text-align: center;
 }
 
@@ -33,7 +32,6 @@ h2 {
     font-family: "Assistant", sans-serif;
     font-weight: 600;
     font-size: 2em;
-    font-optical-sizing: auto;
 }
 
 /*Sticky footer*/
@@ -48,26 +46,26 @@ body .wrapper {
 
 /*Navigation*/
 header img {
-    margin-left: 30px;
     width: 60px;
+    padding-top: 20px;
 }
 
 header {
-    background-image: url(../images/mitchell-luo-U1Hhinvb-v4-unsplash.jpg);
+    background-image: url(../images/milad-fakurian-7wUorDiCMSU-unsplash.jpg);
     background-repeat: no-repeat;
-    background-position: 20% 0 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10em;
+    background-position-x: 30%;
+    min-height: 150px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 10px 0 black;
+    box-shadow: 0 0 10px 0 #7a7a79;
 }
 
 nav ul {
     display: flex;
+    flex-direction: column;
     list-style-type: none;
+
 }
 
 header li {
@@ -83,7 +81,8 @@ header li a {
     font-style: normal;
 }
 
-picture {
+picture,
+img {
     margin: 0 auto;
 }
 
@@ -95,9 +94,10 @@ picture {
 .card {
     position: relative;
     /*change size*/
-    width: 350px;
+    width: 300px;
     /*change size*/
-    height: 350px;
+    height: 300;
+    margin: 5% auto;
     background-color: #ececec;
     border-radius: 10px;
     display: flex;
@@ -107,12 +107,11 @@ picture {
     perspective: 1000px;
     box-shadow: 0 0 0 5px #ffffff80;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    margin-bottom: 3%;
 }
 
 .card picture {
     /*change size*/
-    width: 3500px;
+    width: 300px;
     fill: #333;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -142,11 +141,6 @@ picture {
 }
 
 
-.card__description {
-    font-size: 16px;
-    line-height: 1.1;
-}
-
 .uxtitle {
     font-size: 16px;
     color: #333;
@@ -156,7 +150,7 @@ picture {
 
 .card:hover picture,
 .card:focus picture {
-    scale: 0;
+    transform: scale(0);
 }
 
 .card__description {
@@ -164,13 +158,14 @@ picture {
     color: #777;
     font-family: "Assistant", sans-serif;
     font-size: 16px;
-    line-height: 1.1;
+    line-height: 1;
 }
 
 
 /*Web section styles*/
 .web {
     background-image: url(../images/milad-fakurian-7wUorDiCMSU-unsplash.jpg);
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -183,22 +178,13 @@ picture {
     position: relative;
     border-radius: 10px;
     /*change size*/
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     background-color: whitesmoke;
-    -webkit-transform: preserve-3d;
-    -ms-transform: preserve-3d;
-    transform: preserve-3d;
-    -webkit-perspective: 2000px;
+    transform-style: preserve-3d;
     perspective: 2000px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -210,40 +196,28 @@ picture {
     height: 100%;
     border-radius: 10px;
     cursor: pointer;
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    -webkit-transform-origin: 0;
-    -ms-transform-origin: 0;
     transform-origin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .book:hover .cover,
 .book:focus .cover {
-    -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    -webkit-transform: rotatey(-80deg);
-    -ms-transform: rotatey(-80deg);
     transform: rotatey(-80deg);
 }
 
 .web-title {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
     font-family: "Philosopher", sans-serif;
 }
 
 p {
     padding: 5% 15% 5% 15%;
-    font-size: 18px;
+    font-size: 14px;
     font-family: "Assistant", sans-serif;
 }
 
@@ -254,9 +228,14 @@ p {
     position: relative;
     transition: transform 1500ms;
     transform-style: preserve-3d;
-    /*change margin*/
-    margin-bottom: 440px;
+    /*change margin (the img size+40px)*/
+    margin-bottom: 340px;
+}
 
+.illustrations {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    margin: 0 auto;
 }
 
 .illustrations:hover>.card-illustrations,
@@ -292,7 +271,7 @@ p {
 
 .logos {
     display: grid;
-    grid-auto-rows: (4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     row-gap: 20px;
 }
 
@@ -334,16 +313,69 @@ footer {
 }
 
 /*Media Queries*/
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 401px) {
+
+    /*UX Projects Card Styles*/
+    .card {
+        width: 400px;
+        height: 400px;
+    }
+
+    .card picture {
+        width: 400px;
+    }
+
+    .card__description {
+        line-height: 1.1;
+    }
+
+    /*Web Projects Card Styles*/
+    .book {
+        width: 400px;
+        height: 400px;
+    }
+
+    .web-title {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
 
     /*Navigation*/
-    header li {
-        margin: 30px;
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
     }
 
-    header li a {
-        font-size: 1.8em;
+    header img {
+        margin-left: 30px;
+        width: 60px;
+        padding-top: 0;
     }
+
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    /*Illustrations Card Styles*/
+    .illustrations {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    .card-illustrations {
+        margin-bottom: 440px;
+    }
+}
+
+@media screen and (min-width: 601px) {
 
     /*UX Projects Card Styles*/
     .card {
@@ -355,14 +387,13 @@ footer {
         width: 600px;
     }
 
-    .uxtitle {
-        font-size: 24px;
-    }
-
     .card__description {
         font-size: 18px;
         line-height: 1.4;
+    }
 
+    .uxtitle {
+        font-size: 20px;
     }
 
     /*Web Projects Card Styles*/
@@ -379,12 +410,24 @@ footer {
         font-size: 18px;
     }
 
-    /*Illustrations Card Styles*/
-    .illustrations {
-        display: grid;
-        grid-template-rows: repeat(2, 1fr);
-        grid-auto-rows: auto;
+
+}
+
+@media screen and (min-width: 769px) {
+
+    /*Navigation*/
+    header li {
+        margin: 30px;
     }
+
+    header li a {
+        font-size: 1.8em;
+    }
+
+    .uxtitle {
+        font-size: 24px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -393,21 +436,21 @@ footer {
     .ux-projects {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: auto;
+        grid-template-rows: auto;
     }
 
     /*Illustrations Card Styles*/
     .illustrations {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: auto;
+        grid-template-rows: auto;
     }
 
     /*Logos*/
     .logos {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: auto;
+        grid-template-rows: auto;
         row-gap: 20px;
     }
 }
@@ -418,14 +461,14 @@ footer {
     .illustrations {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: auto;
+        grid-template-rows: auto;
     }
 
     /*Logos*/
     .logos {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: auto;
+        grid-template-rows: 1fr;
         row-gap: 20px;
     }
 }
