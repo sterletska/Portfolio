@@ -38,9 +38,11 @@ h2 {
 body {
     display: flex;
     flex-direction: column;
+    max-width: 2000px;
+    margin: 0 auto;
 }
 
-body .wrapper {
+.wrapper {
     flex: 1 0 auto;
 }
 
@@ -65,7 +67,6 @@ nav ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-
 }
 
 header li {
@@ -96,7 +97,7 @@ img {
     /*change size*/
     width: 300px;
     /*change size*/
-    height: 300;
+    height: 300px;
     margin: 5% auto;
     background-color: #ececec;
     border-radius: 10px;
@@ -140,7 +141,6 @@ img {
     transform: rotateX(0deg);
 }
 
-
 .uxtitle {
     font-size: 16px;
     color: #333;
@@ -170,6 +170,8 @@ img {
     background-position: center;
     background-size: cover;
     padding: 1% 0 3%;
+    display: grid;
+    grid-template-rows: 0.5fr 3fr 3fr;
 }
 
 /*Web Projects Card Styles*/
@@ -209,6 +211,20 @@ img {
     transform: rotatey(-80deg);
 }
 
+#web {
+    grid-row: 1;
+}
+
+.one {
+    grid-row: 2;
+    margin: 1% auto;
+}
+
+.two {
+    grid-row: 3;
+    margin: 1% auto;
+}
+
 .web-title {
     font-size: 14px;
     font-weight: 700;
@@ -230,12 +246,12 @@ p {
     transform-style: preserve-3d;
     /*change margin (the img size+40px)*/
     margin-bottom: 340px;
+
 }
 
 .illustrations {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
-    margin: 0 auto;
 }
 
 .illustrations:hover>.card-illustrations,
@@ -312,183 +328,209 @@ footer {
     opacity: 0.5;
 }
 
-/*Media Queries*/
-@media screen and (min-width: 401px) {
+@supports (grid-area: auto) {
+    /*Media Queries*/
+    @media screen and (min-width: 401px) {
 
-    /*UX Projects Card Styles*/
-    .card {
-        width: 400px;
-        height: 400px;
+        /*UX Projects Card Styles*/
+        .card {
+            width: 400px;
+            height: 400px;
+        }
+
+        .card picture {
+            width: 400px;
+        }
+
+        .card__description {
+            line-height: 1.1;
+        }
+
+        /*Web Projects Card Styles*/
+        .book {
+            width: 400px;
+            height: 400px;
+        }
+
+        .web-title {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        /*Navigation*/
+
+        nav ul {
+            display: flex;
+            flex-direction: row;
+        }
+
+        header img {
+            margin-left: 30px;
+            width: 60px;
+            padding-top: 0;
+        }
+
+        header {
+            flex-direction: row;
+        }
+
+        nav ul {
+            flex-direction: row;
+        }
+
+        /*Illustrations Card Styles*/
+        .illustrations {
+            display: grid;
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        .card-illustrations {
+            margin-bottom: 440px;
+        }
     }
 
-    .card picture {
-        width: 400px;
+    @media screen and (min-width: 601px) {
+
+        /*UX Projects Card Styles*/
+        .card {
+            width: 600px;
+            height: 600px;
+        }
+
+        .card picture {
+            width: 600px;
+        }
+
+        .card__description {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .uxtitle {
+            font-size: 20px;
+        }
+
+        /*Web Projects Card Styles*/
+        .book {
+            width: 600px;
+            height: 600px;
+        }
+
+        .web-title {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+
     }
 
-    .card__description {
-        line-height: 1.1;
+    @media screen and (min-width: 769px) {
+
+        /*Navigation*/
+        header li {
+            margin: 30px;
+        }
+
+        header li a {
+            font-size: 1.8em;
+        }
+
+        .uxtitle {
+            font-size: 24px;
+        }
+
     }
 
-    /*Web Projects Card Styles*/
-    .book {
-        width: 400px;
-        height: 400px;
+    @media screen and (min-width: 1024px) {
+
+        /*UX Projects Card Styles*/
+        .ux-projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+        }
+
+        /*Illustrations Card Styles*/
+        .illustrations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+        }
+
+        /*Logos*/
+        .logos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            row-gap: 20px;
+        }
     }
 
-    .web-title {
-        font-size: 24px;
-    }
+    @media screen and (min-width: 1366px) {
 
-    p {
-        font-size: 18px;
-    }
+        /*Illustrations Card Styles*/
+        .illustrations {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+        }
 
-    /*Navigation*/
+        /*Logos*/
+        .logos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            row-gap: 20px;
+        }
 
-    nav ul {
-        display: flex;
-        flex-direction: row;
-    }
+        /*Web Projects Card Styles*/
+        .web {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 5fr;
+        }
 
-    header img {
-        margin-left: 30px;
-        width: 60px;
-        padding-top: 0;
-    }
+        #web {
+            grid-column: span 2;
+            height: auto;
+        }
 
-    header {
-        flex-direction: row;
-    }
+        .one {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            margin: 0 auto;
+        }
 
-    nav ul {
-        flex-direction: row;
-    }
-
-    /*Illustrations Card Styles*/
-    .illustrations {
-        display: grid;
-        grid-template-rows: repeat(6, 1fr);
-    }
-
-    .card-illustrations {
-        margin-bottom: 440px;
-    }
-}
-
-@media screen and (min-width: 601px) {
-
-    /*UX Projects Card Styles*/
-    .card {
-        width: 600px;
-        height: 600px;
-    }
-
-    .card picture {
-        width: 600px;
-    }
-
-    .card__description {
-        font-size: 18px;
-        line-height: 1.4;
-    }
-
-    .uxtitle {
-        font-size: 20px;
-    }
-
-    /*Web Projects Card Styles*/
-    .book {
-        width: 600px;
-        height: 600px;
-    }
-
-    .web-title {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 18px;
+        .two {
+            grid-column: 2/3;
+            grid-row: 2/3;
+            margin: 0 auto;
+        }
     }
 
 
-}
+    @media screen and (min-width: 1870px) {
+        .ux-projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
 
-@media screen and (min-width: 769px) {
+        /*Illustrations Card Styles*/
+        .illustrations {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
 
-    /*Navigation*/
-    header li {
-        margin: 30px;
-    }
-
-    header li a {
-        font-size: 1.8em;
-    }
-
-    .uxtitle {
-        font-size: 24px;
-    }
-
-}
-
-@media screen and (min-width: 1024px) {
-
-    /*UX Projects Card Styles*/
-    .ux-projects {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-    }
-
-    /*Illustrations Card Styles*/
-    .illustrations {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-    }
-
-    /*Logos*/
-    .logos {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        row-gap: 20px;
-    }
-}
-
-@media screen and (min-width: 1366px) {
-
-    /*Illustrations Card Styles*/
-    .illustrations {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-    }
-
-    /*Logos*/
-    .logos {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        row-gap: 20px;
-    }
-}
-
-
-@media screen and (min-width: 1870px) {
-    .ux-projects {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /*Illustrations Card Styles*/
-    .illustrations {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /*Logos*/
-    .logos {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        /*Logos*/
+        .logos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 }
